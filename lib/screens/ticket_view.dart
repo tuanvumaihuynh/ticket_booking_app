@@ -131,13 +131,13 @@ class TicketView extends StatelessWidget {
               color: Styles.orangeColor, //const Color(0xFFF37B67)
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                     width: 10,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: Styles.bgColor,
-                        borderRadius: const BorderRadius.only(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
                           topRight: Radius.circular(10),
                           bottomRight: Radius.circular(10),
                         ),
@@ -156,12 +156,12 @@ class TicketView extends StatelessWidget {
                             mainAxisSize: MainAxisSize.max,
                             children: List.generate(
                               (constraints.constrainWidth() / 15).floor(),
-                              (index) => SizedBox(
+                              (index) => const SizedBox(
                                 width: 5,
                                 height: 1,
                                 child: DecoratedBox(
                                   decoration: BoxDecoration(
-                                    color: Styles.bgColor,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),
@@ -171,13 +171,13 @@ class TicketView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                     width: 10,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: Styles.bgColor,
-                        borderRadius: const BorderRadius.only(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
                           bottomLeft: Radius.circular(10),
                         ),
