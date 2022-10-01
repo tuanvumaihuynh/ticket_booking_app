@@ -1,5 +1,6 @@
 import 'package:booking_ticket_app/screens/hotel_screen.dart';
 import 'package:booking_ticket_app/screens/ticket_view.dart';
+import 'package:booking_ticket_app/utils/app_info_lists.dart';
 import 'package:booking_ticket_app/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -100,16 +101,19 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Row(
-              children: [
-                TicketView(),
-                TicketView(),
-                TicketView(),
-              ],
+              children: ticketList
+                  .map((singleTicket) => TicketView(
+                        ticket: singleTicket,
+                        isColor: null,
+                        topCircular: true,
+                        bottomCircular: true,
+                      ))
+                  .toList(),
             ),
           ),
           const Gap(15),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -133,14 +137,11 @@ class _HomeScreenState extends State<HomeScreen> {
           const Gap(15),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                HotelScreen(),
-                HotelScreen(),
-                HotelScreen(),
-                HotelScreen(),
-              ],
+              children: hotelList
+                  .map((singleHotel) => HotelScreen(hotel: singleHotel))
+                  .toList(),
             ),
           ),
         ],
